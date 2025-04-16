@@ -1,92 +1,78 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { Minus, Square, X } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import "../styles/Window.css"
 
-export function Window({ id, title, icon, children, isActive, onClose, onFocus }) {
-  const [position, setPosition] = useState({ x: 50 + Math.random() * 100, y: 50 + Math.random() * 100 })
-  const [size, setSize] = useState({ width: 500, height: 400 })
-  const [isDragging, setIsDragging] = useState(false)
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+function Window({ id, title, children, active, zIndex, onClose, onMinimize, onActivate }) {
+  const [position, setPosition] = useState({ x: 50 + (id % 5) * 20, y: 50 + (id % 3) * 20 })
+  const [dragging, setDragging] = useState(false)
+  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  const [size, setSize] = useState({ width: 500, height: 300 })
   const windowRef = useRef(null)
 
+  const handleMouseDown = (e) => {
+    if (e.target.classList.contains("title-bar")) {
+      setDragging(true)
+      setOffset({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y,
+      })
+      onActivate()
+    }
+  }
+
+  const handleMouseMove = (e) => {
+    if (dragging) {
+      setPosition({
+        x: e.clientX - offset.x,
+        y: e.clientY - offset.y,
+      })
+    }
+  }
+
+  const handleMouseUp = () => {
+    setDragging(false)
+  }
+
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (isDragging) {
-        setPosition({
-          x: e.clientX - dragOffset.x,
-          y: e.clientY - dragOffset.y,
-        })
-      }
-    }
-
-    const handleMouseUp = () => {
-      setIsDragging(false)
-    }
-
-    if (isDragging) {
+    if (dragging) {
       document.addEventListener("mousemove", handleMouseMove)
       document.addEventListener("mouseup", handleMouseUp)
+    } else {
+      document.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mouseup", handleMouseUp)
     }
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove)
       document.removeEventListener("mouseup", handleMouseUp)
     }
-  }, [isDragging, dragOffset])
-
-  const handleMouseDown = (e) => {
-    if (windowRef.current) {
-      const rect = windowRef.current.getBoundingClientRect()
-      setDragOffset({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      })
-      setIsDragging(true)
-      onFocus()
-    }
-  }
+  }, [dragging])
 
   return (
     <div
-      ref={windowRef}
-      className={`absolute rounded border-2 ${
-        isActive ? "z-30 border-[#dfdfdf]" : "z-20 border-[#c0c0c0]"
-      } bg-[#c0c0c0] shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#ffffff]`}
+      className={`window ${active ? "active" : ""}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         width: `${size.width}px`,
         height: `${size.height}px`,
+        zIndex,
       }}
-      onClick={onFocus}
+      ref={windowRef}
+      onMouseDown={onActivate}
     >
-      <div
-        className={`flex h-6 items-center justify-between px-2 ${
-          isActive ? "bg-[#000080] text-white" : "bg-[#808080] text-[#c0c0c0]"
-        }`}
-        onMouseDown={handleMouseDown}
-      >
-        <div className="flex items-center gap-1">
-          <span className="flex h-4 w-4 items-center justify-center">{icon}</span>
-          <span className="text-xs font-bold">{title}</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <button className="flex h-4 w-4 items-center justify-center rounded border border-[#dfdfdf] bg-[#c0c0c0] text-black shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#ffffff]">
-            <Minus size={10} />
-          </button>
-          <button className="flex h-4 w-4 items-center justify-center rounded border border-[#dfdfdf] bg-[#c0c0c0] text-black shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#ffffff]">
-            <Square size={10} />
-          </button>
-          <button
-            className="flex h-4 w-4 items-center justify-center rounded border border-[#dfdfdf] bg-[#c0c0c0] text-black shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#ffffff]"
-            onClick={onClose}
-          >
-            <X size={10} />
-          </button>
+      <div className="title-bar" onMouseDown={handleMouseDown}>
+        <div className="title-bar-text">{title}</div>
+        <div className="title-bar-controls">
+          <button aria-label="Minimize" onClick={onMinimize}></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onClick={onClose}></button>
         </div>
       </div>
-      <div className="flex h-[calc(100%-1.5rem)] flex-col overflow-auto bg-white p-1">{children}</div>
+      <div className="window-body">{children}</div>
     </div>
   )
 }
+
+export default Window
