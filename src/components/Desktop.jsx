@@ -4,9 +4,10 @@ import "../styles/Desktop.css"
 
 function Desktop({ onIconClick }) {
   const desktopIcons = [
-    { id: "mycomputer", name: "My Computer", icon: "/my-computer.png" },
-    { id: "notepad", name: "Notepad", icon: "/notepad.png" },
-    { id: "recycle", name: "Recycle Bin", icon: "/recycle-bin.png" },
+    { id: "mycomputer", name: "My Computer", icon: "/img/computer_explorer.ico" },
+    { id: "notepad", name: "Notepad", icon: "/img/notepad.ico" },
+    { id: "recycle", name: "Recycle Bin", icon: "/img/recycle_bin_empty.ico" },
+    { id: "portfolio", name: "Portfolio", icon :"/img/briefcase-4.png"},
   ]
 
   return (

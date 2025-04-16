@@ -9,10 +9,14 @@ function MyComputer() {
 
   return (
     <div className="my-computer">
+      <div className="my-computer-header">
+        <img src="/img/computer_explorer.ico" alt="My Computer" className="my-computer-icon" />
+        <span className="my-computer-title">My Computer</span>
+      </div>
       <div className="folder-view">
         {drives.map((drive) => (
           <div key={drive.id} className="folder-item">
-            <img src={drive.icon || "/placeholder.svg"} alt={drive.name} className="folder-icon" />
+            <img src={drive.icon || "img/computer_explorer.ico"} alt={drive.name} className="folder-icon" />
             <div className="folder-details">
               <div className="folder-name">{drive.name}</div>
               <div className="folder-type">{drive.type}</div>

@@ -31,7 +31,7 @@ function Taskbar({
     <div className="taskbar">
       <div className="start-button-container">
         <button className="start-button" onClick={onStartClick}>
-          <img src="/win-logo.png" alt="Windows" className="win-logo" />
+          <img src="/img/windows.ico" alt="Windows" className="win-logo" />
           <span>Start</span>
         </button>
         {startMenuOpen && <StartMenu onProgramClick={onStartClick} />}
