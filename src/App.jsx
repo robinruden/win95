@@ -7,6 +7,7 @@ import Taskbar from "./components/Taskbar"
 import Desktop from "./components/Desktop"
 import Notepad from "./components/Notepad"
 import MyComputer from "./components/MyComputer"
+import SpinningCD from "./components/SpinningCD"
 
 function App() {
   const [openWindows, setOpenWindows] = useState([])
@@ -28,6 +29,8 @@ function App() {
         return "Untitled - Notepad"
       case "mycomputer":
         return "My Computer"
+      case "SpinningCD":
+        return "Spinning CD"
       default:
         return "Window"
     }
@@ -90,6 +93,7 @@ function App() {
         >
           {window.type === "notepad" && <Notepad />}
           {window.type === "mycomputer" && <MyComputer />}
+          {window.type === "SpinningCD" && <SpinningCD />}
         </Window>
       ))}
 
@@ -105,5 +109,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App

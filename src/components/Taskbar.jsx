@@ -29,13 +29,13 @@ function Taskbar({
 
   return (
     <div className="taskbar">
-      <div className="start-button-container">
+      {/* <div className="start-button-container">
         <button className="start-button" onClick={onStartClick}>
           <img src="/img/windows.ico" alt="Windows" className="win-logo" />
           <span>Start</span>
         </button>
         {startMenuOpen && <StartMenu onProgramClick={onStartClick} />}
-      </div>
+      </div> */}
 
       <div className="taskbar-buttons">
         {openWindows.map((window) => (
