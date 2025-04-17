@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   /* background-color: #008080; */
-  background-image: url("./img/moln.png");
+  background-image: url("/img/moln.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
