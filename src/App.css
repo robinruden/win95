@@ -1,7 +1,6 @@
 .win95-app {
   width: 100vw;
-  height: 100vh;
-  /* background-color: #008080; */
+  height: 95vh;
   background-image: url("/img/moln.png");
   background-size: cover;
   background-position: center;
