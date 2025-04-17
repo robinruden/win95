@@ -36,7 +36,7 @@ function Desktop({ onIconClick }) {
            <div
            ref={nodeRef}
              className="desktop-icon"
-             onDoubleClick={() => onIconClick(icon.id)}
+             onClick={() => onIconClick(icon.id)}
            >
              <img
                src={icon.icon || "/placeholder.svg"}
