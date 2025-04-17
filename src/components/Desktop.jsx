@@ -38,12 +38,7 @@ function Desktop({ onIconClick }) {
            ref={nodeRef}
              className="desktop-icon"
              onClick={() => onIconClick(icon.id)}
-             onTouchEnd={(e) => {
-               // If they tapped on the image itself, it's starting a drag, so ignore.
-               if (e.target.classList.contains("icon-image")) return
-               onIconClick(icon.id)
-             }}
-             >
+           >
              <img
                src={icon.icon || "/placeholder.svg"}
                alt={icon.name}
