@@ -1,11 +1,11 @@
 .win95-app {
+  height: 100vh;
   width: 100vw;
-  height: 95vh;
   background-image: url("/img/moln.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
   color: #000;

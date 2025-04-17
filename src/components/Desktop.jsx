@@ -1,6 +1,8 @@
 "use client"
 
 import "../styles/Desktop.css"
+import Draggable from 'react-draggable'
+import { useRef } from 'react'
 
 function Desktop({ onIconClick }) {
   const desktopIcons = [
@@ -12,14 +14,41 @@ function Desktop({ onIconClick }) {
   ]
 
   return (
-    <div className="desktop">
+  /*   <div className="desktop">
       {desktopIcons.map((icon) => (
         <div key={icon.id} className="desktop-icon" onDoubleClick={() => onIconClick(icon.id)}>
           <img src={icon.icon || "/placeholder.svg"} alt={icon.name} className="icon-image" />
           <div className="icon-text">{icon.name}</div>
         </div>
       ))}
-    </div>
+ </div> */
+ <div className="desktop">
+       {desktopIcons.map((icon, i) => {
+        const nodeRef = useRef(null)
+
+        return (
+         <Draggable
+           key={icon.id}
+           nodeRef={nodeRef}
+           bounds="parent"
+           defaultPosition={{ x: 20, y: 20 * (i + 1) }}
+         >
+           <div
+           ref={nodeRef}
+             className="desktop-icon"
+             onDoubleClick={() => onIconClick(icon.id)}
+           >
+             <img
+               src={icon.icon || "/placeholder.svg"}
+               alt={icon.name}
+               className="icon-image"
+             />
+             <div className="icon-text">{icon.name}</div>
+           </div>
+         </Draggable>
+        )
+      })}
+     </div>
   )
 }
 

@@ -1,9 +1,11 @@
 .desktop {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 28px;
+  width: 100%;
+  height: calc(100% - 28px);
   display: grid;
   grid-template-columns: repeat(auto-fill, 75px);
   grid-auto-rows: 80px;
@@ -14,6 +16,8 @@
 
 .desktop-icon {
   display: flex;
+  position: absolute;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
