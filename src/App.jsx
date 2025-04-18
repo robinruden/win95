@@ -10,8 +10,8 @@ import MyComputer from "./components/MyComputer"
 import SpinningCD from "./components/SpinningCD"
 
 const SIZE_MAP = {
-  notepad: { width: 400, height: 300},
-  SpinningCD: {width: 200, height: 300}
+  notepad: { width: 200, height: 200},
+  SpinningCD: {width: 200, height: 200}
 }
 
 function App() {
