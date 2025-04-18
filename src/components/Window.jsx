@@ -3,11 +3,20 @@
 import { useState, useRef, useEffect } from "react"
 import "../styles/Window.css"
 
-function Window({ id, title, children, active, zIndex, onClose, onMinimize, onActivate }) {
-  const [position, setPosition] = useState({ x: 50 + (id % 5) * 20, y: 50 + (id % 3) * 20 })
+function Window({ 
+  id, title, children, 
+  active, zIndex, 
+  width = 500,
+  height = 300,
+  onClose, onMinimize, onActivate 
+}) {
+  const [position, setPosition] = useState({ 
+    x: 50 + (id % 5) * 20, 
+    y: 50 + (id % 3) * 20 
+  })
   const [dragging, setDragging] = useState(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
-  const [size, setSize] = useState({ width: 500, height: 300 })
+  const [size, setSize] = useState({ width, height})
   const windowRef = useRef(null)
 
   const handleMouseDown = (e) => {
@@ -55,8 +64,8 @@ function Window({ id, title, children, active, zIndex, onClose, onMinimize, onAc
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        width: `${size.width}px`,
-        height: `${size.height}px`,
+        width: `${width}px`,
+        height: `${height}px`,
         zIndex,
       }}
       ref={windowRef}

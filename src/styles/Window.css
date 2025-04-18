@@ -6,8 +6,8 @@
   box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #868a8e;
   display: flex;
   flex-direction: column;
-  min-width: 200px;
-  min-height: 150px;
+  /* min-width: 20px; */
+  /* min-height: 15px; */
 }
 
 .window.active {

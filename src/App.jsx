@@ -9,6 +9,11 @@ import Notepad from "./components/Notepad"
 import MyComputer from "./components/MyComputer"
 import SpinningCD from "./components/SpinningCD"
 
+const SIZE_MAP = {
+  notepad: { width: 400, height: 300},
+  SpinningCD: {width: 200, height: 300}
+}
+
 function App() {
   const [openWindows, setOpenWindows] = useState([])
   const [activeWindow, setActiveWindow] = useState(null)
@@ -17,7 +22,15 @@ function App() {
 
   const openWindow = (windowType) => {
     const id = Date.now()
-    const newWindow = { id, type: windowType, title: getWindowTitle(windowType), zIndex: openWindows.length }
+    const size = SIZE_MAP[windowType] || {}
+    const newWindow = { 
+      id, 
+      type: windowType, 
+      title: getWindowTitle(windowType), 
+      zIndex: openWindows.length,
+      width: size.width,
+      height: size.height,
+    }
     setOpenWindows([...openWindows, newWindow])
     setActiveWindow(id)
     setStartMenuOpen(false)
@@ -87,6 +100,8 @@ function App() {
           title={window.title}
           active={activeWindow === window.id}
           zIndex={window.zIndex}
+          width={window.width}
+          height={window.height}
           onClose={() => closeWindow(window.id)}
           onMinimize={() => minimizeWindow(window.id)}
           onActivate={() => activateWindow(window.id)}
