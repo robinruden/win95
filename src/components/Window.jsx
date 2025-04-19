@@ -7,12 +7,12 @@ function Window({
   id, title, children, 
   active, zIndex, 
   width = 500,
-  height = 300,
+  height = 500,
   onClose, onMinimize, onActivate 
 }) {
   const [position, setPosition] = useState({ 
-    x: 50 + (id % 5) * 20, 
-    y: 50 + (id % 3) * 20 
+    x: 200 + (id % 5) * 20, 
+    y: 200 + (id % 3) * 20 
   })
   const [dragging, setDragging] = useState(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })

@@ -3,10 +3,10 @@
     height: 100%;
     position: relative;
     cursor: grab;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+   
+    
     overflow: hidden;
-    /* background-color: aquamarine; */
+  
     
   }
   
@@ -15,7 +15,7 @@
   }
   
   /* Optional: Add a retro frame for the PS1 jewel case */
-  .cd-container::before {
+/*   .cd-container::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -23,7 +23,7 @@
     border: 2px solid #bdbdbd;
     border-radius: 8px;
     z-index: 1;
-  }
+  } */
   
   /* Responsive adjustments */
  /*  @media (max-width: 768px) {

@@ -15,7 +15,7 @@ function CDModel({ rotationX, rotationY, autoRotate }) {
     useFrame((_, delta) => {
         if (ref.current && autoRotate) {
         // Auto-spin on Y axis
-        ref.current.rotation.y += delta * 0.3; // Adjust speed as needed
+        ref.current.rotation.y += delta * 0.9; // Adjust speed as needed
         }
 
     // Apply manual rotation from props
@@ -35,7 +35,7 @@ function CDModel({ rotationX, rotationY, autoRotate }) {
         rotation={[0, 0, Math.PI/2]}
         /* rotation={[Math.PI/2, Math.PI/2, 0]} */
        /*  rotation={[-Math.PI/2, 0, 0]} */
-        position={[0, 1, 0]}
+        position={[0, 0, 0]}
         />;
 }
 
@@ -77,7 +77,7 @@ function SpinningCD() {
         onMouseUp={handleMouseUp}
         /* style={{ width: '40vw', height: '40vh', cursor: 'grab' }} */
     >
-        <Canvas camera={{ position: [0, 1, 4], fov: 50 }}>
+        <Canvas camera={{ position: [1, 1.2, 1], fov: 70 }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[1, 1, 50]} />
             <CDModel rotationX={rotationX} rotationY={rotationY} autoRotate={autoRotate}/>

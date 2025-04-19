@@ -11,7 +11,7 @@ import SpinningCD from "./components/SpinningCD"
 
 const SIZE_MAP = {
   notepad: { width: 200, height: 200},
-  SpinningCD: {width: 200, height: 200}
+  SpinningCD: {width: 300, height: 300}
 }
 
 function App() {
