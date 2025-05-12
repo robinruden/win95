@@ -2,9 +2,11 @@
 
 import "../styles/Desktop.css"
 import Draggable from 'react-draggable'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 function Desktop({ onIconClick }) {
+  const [hasOpenedNotepad, setHasOpenedNotepad] = useState(false)
+
   const desktopIcons = [
     /* { id: "mycomputer", name: "My Computer", icon: "/img/computer_explorer.ico" }, */
     { id: "notepad", name: "About me", icon: "/img/notepad.ico", defaultPosition: {x: 300, y: 400} },
@@ -14,6 +16,13 @@ function Desktop({ onIconClick }) {
      { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 140}},
   ]
 
+  useEffect(() => {
+    if (!hasOpenedNotepad) {
+       onIconClick("notepad")
+       setHasOpenedNotepad(true)
+    }
+  }, [hasOpenedNotepad, onIconClick])   
+       
   return (
  <div className="desktop">
        {desktopIcons.map((icon, i) => {
