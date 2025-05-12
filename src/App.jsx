@@ -8,10 +8,12 @@ import Desktop from "./components/Desktop"
 import Notepad from "./components/Notepad"
 import MyComputer from "./components/MyComputer"
 import SpinningCD from "./components/SpinningCD"
+import RexicoCity from "./components/RexicoCity"
 
 const SIZE_MAP = {
   notepad: { width: 200, height: 200},
-  SpinningCD: {width: 300, height: 300}
+  SpinningCD: {width: 150, height: 150},
+  RexicoCity: {width: 150, height: 150}
 }
 
 function App() {
@@ -39,11 +41,13 @@ function App() {
   const getWindowTitle = (type) => {
     switch (type) {
       case "notepad":
-        return "Untitled - Notepad"
+        return "About me"
       case "mycomputer":
         return "My Computer"
       case "SpinningCD":
         return "Spinning CD"
+      case "RexicoCity":
+        return "Rexico City"
       default:
         return "Window"
     }
@@ -109,6 +113,7 @@ function App() {
           {window.type === "notepad" && <Notepad />}
           {window.type === "mycomputer" && <MyComputer />}
           {window.type === "SpinningCD" && <SpinningCD />}
+          {window.type === "RexicoCity" && <RexicoCity />}
         </Window>
       ))}
 

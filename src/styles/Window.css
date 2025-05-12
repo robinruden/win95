@@ -6,8 +6,7 @@
   box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #868a8e;
   display: flex;
   flex-direction: column;
-  /* min-width: 20px; */
-  /* min-height: 15px; */
+  
 }
 
 .window.active {
@@ -15,7 +14,7 @@
 }
 
 .title-bar {
-  background: linear-gradient(90deg, #000080, #1084d0);
+  background: linear-gradient(90deg, var(--lightblue), var(--darkblue));
   color: white;
   display: flex;
   justify-content: space-between;
@@ -95,8 +94,23 @@
   flex: 1;
   padding: 8px;
   overflow: auto;
-  background-color: #c0c0c0;
+  
+
   border: 1px solid;
   border-color: #868a8e #ffffff #ffffff #868a8e;
   margin: 1px;
+}
+
+.window-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(img/moln-3.png);
+  background-size: cover; /* Adjust as needed */
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1; /* Place the pseudo-element behind the content */
 }

@@ -11,6 +11,7 @@ function Desktop({ onIconClick }) {
     /* { id: "recycle", name: "Recycle Bin", icon: "/img/recycle_bin_empty.ico" }, */
    /*  { id: "portfolio", name: "Portfolio", icon :"/img/briefcase-4.png"}, */
     { id: "SpinningCD", name: "Spinning CD.exe", icon :"/img/cd_drive.ico", defaultPosition: {x: 10, y: 60}},
+     { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 140}},
   ]
 
   return (

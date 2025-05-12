@@ -6,13 +6,13 @@ import "../styles/Window.css"
 function Window({ 
   id, title, children, 
   active, zIndex, 
-  width = 500,
-  height = 500,
+  width = 200,
+  height = 200,
   onClose, onMinimize, onActivate 
 }) {
   const [position, setPosition] = useState({ 
-    x: 200 + (id % 5) * 20, 
-    y: 200 + (id % 3) * 20 
+    x: 100 + (id % 5) * 1, 
+    y: 160 + (id % 3) * 1 
   })
   const [dragging, setDragging] = useState(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
@@ -74,8 +74,8 @@ function Window({
       <div className="title-bar" onMouseDown={handleMouseDown}>
         <div className="title-bar-text">{title}</div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize" onClick={onMinimize}></button>
-          <button aria-label="Maximize"></button>
+          {/* <button aria-label="Minimize" onClick={onMinimize}></button> */}
+          {/* <button aria-label="Maximize"></button> */}
           <button aria-label="Close" onClick={onClose}></button>
         </div>
       </div>

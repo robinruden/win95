@@ -8,17 +8,24 @@ function Notepad() {
 
   return (
     <div className="notepad">
-      <div className="notepad-menu">
+     {/*  <div className="notepad-menu">
         <div className="menu-item">File</div>
         <div className="menu-item">Edit</div>
         <div className="menu-item">Search</div>
         <div className="menu-item">Help</div>
-      </div>
+      </div> */}
       <textarea
         className="notepad-textarea"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Type some text here..."
+        placeholder="Welcome to my portfolio
+
+Just click on the icons to the left to open them and explore my projects
+
+Conatact me at: 
+Contact.exe
+        
+        "
       />
     </div>
   )

@@ -18,18 +18,23 @@
 }
 
 .menu-item:hover {
-  background-color: #000080;
+  background-color: var(--darkblue);
   color: white;
 }
 
 .notepad-textarea {
   flex: 1;
   resize: none;
-  border: 1px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.697);
+  color: black;
   font-family: "Courier New", monospace;
-  font-size: 12px;
+
   padding: 4px;
   outline: none;
+}
+
+.notepad-textarea::placeholder {
+  color: rgb(0, 0, 0); 
+  font-weight: bolder;
+  font-size: 0.8rem;
 }
