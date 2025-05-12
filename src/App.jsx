@@ -13,7 +13,7 @@ import RexicoCity from "./components/RexicoCity"
 const SIZE_MAP = {
   notepad: { width: 200, height: 200},
   SpinningCD: {width: 150, height: 150},
-  RexicoCity: {width: 250, height: 250}
+  RexicoCity: {width: 250, height: 200}
 }
 
 function App() {
