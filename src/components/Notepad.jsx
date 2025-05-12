@@ -22,7 +22,7 @@ function Notepad() {
 
 Just click on the icons to the left to open them and explore my projects
 
-Conatact me at: 
+Contact me at: 
 Contact.exe
         
         "

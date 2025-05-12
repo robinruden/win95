@@ -1,5 +1,13 @@
 .rexico-city {
-  background-color: #f0f0f08f;
-  padding: 20px;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rexico-city img{
+    width: 14rem;
+    height: 10rem;
 }

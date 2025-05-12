@@ -1,7 +1,7 @@
 .window {
   position: absolute;
   background-color: #c0c0c0;
-  border: 2px solid;
+  
   border-color: #dfdfdf #000000 #000000 #dfdfdf;
   box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #868a8e;
   display: flex;
@@ -94,7 +94,9 @@
   flex: 1;
   padding: 8px;
   overflow: auto;
-  
+  width: 100%;
+  height: 100%;
+
 
   border: 1px solid;
   border-color: #868a8e #ffffff #ffffff #868a8e;

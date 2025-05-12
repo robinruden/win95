@@ -12,8 +12,8 @@ function Desktop({ onIconClick }) {
     { id: "notepad", name: "About me", icon: "/img/notepad.ico", defaultPosition: {x: 300, y: 400} },
     /* { id: "recycle", name: "Recycle Bin", icon: "/img/recycle_bin_empty.ico" }, */
    /*  { id: "portfolio", name: "Portfolio", icon :"/img/briefcase-4.png"}, */
-    { id: "SpinningCD", name: "Spinning CD.exe", icon :"/img/cd_drive.ico", defaultPosition: {x: 10, y: 60}},
-     { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 140}},
+   /*  { id: "SpinningCD", name: "Spinning CD.exe", icon :"/img/cd_drive.ico", defaultPosition: {x: 10, y: 60}}, */
+     { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 60}},
   ]
 
   useEffect(() => {
@@ -39,7 +39,10 @@ function Desktop({ onIconClick }) {
          >
            <div
            ref={nodeRef}
-             className="desktop-icon"
+             className={`desktop-icon 
+              ${icon.id === "notepad" ? "notepad-icon" : ""}
+              ${icon.id === "RexicoCity" ? "rexico-icon" : ""}
+              `}
              onClick={() => onIconClick(icon.id)}
            >
              <img
