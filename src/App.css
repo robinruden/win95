@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   overflow: auto;
   position: relative;
-  font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
+  /* font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif; */
   color: #000;
   user-select: none;
 }

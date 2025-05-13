@@ -1,12 +1,13 @@
-@font-face {
+/* @font-face {
   font-family: "MS Sans Serif";
   src: url("/ms-sans-serif.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 :root {
-  font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
+  /* font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif; */
+  font-family: "Courier New", monospace;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;

@@ -1,13 +1,93 @@
 .contact {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* background-image: url('/img/clouds-blurry.png'); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    justify-content: center;
+
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.697);
+    /* background-image: url('/img/clouds-blurry.png'); */
 }
 
+.contact-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: 80%;
+    height: 30%;
+    margin: 0;
+    padding: 0;
+    
+
+    /* border: solid 2px pink; */
+}
+
+.contact-photo {
+    background-color: rgba(255, 255, 255, 0.697);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    width: 5rem;
+    height: 5rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.contact-photo img {
+    width: 100%;
+    height: 100%;object-fit: cover;
+}
+
+.contact-title-bar  {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    width: 100%;
+    
+    height: 8rem;
+    padding: 0.2rem;
+   /*  margin: 1rem; */
+    box-sizing: border-box;
+
+    
+
+    /* border: solid 2px pink; */
+   
+}
+
+.contact-name{
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    color: black;
+    text-align: left;
+    /* margin: 10px; */
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.contact-occupation{
+    font-family: "Courier New", monospace;
+    font-size: 1.5rem;
+    color: black;
+    text-align: left;
+    /* margin: 10px; */
+    
+    margin-bottom: 5rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    
+
+    /* border: solid 2px pink; */
+}
 
 /* .contact-textarea {
   flex: 1;
