@@ -1,6 +1,6 @@
 "use client"
 
-import "./amiga.css"
+import "./Amiga.css"
 import { useState } from "react"
 
 function Amiga() {
