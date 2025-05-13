@@ -13,7 +13,8 @@ function Desktop({ onIconClick }) {
     /* { id: "recycle", name: "Recycle Bin", icon: "/img/recycle_bin_empty.ico" }, */
    /*  { id: "portfolio", name: "Portfolio", icon :"/img/briefcase-4.png"}, */
    /*  { id: "SpinningCD", name: "Spinning CD.exe", icon :"/img/cd_drive.ico", defaultPosition: {x: 10, y: 60}}, */
-     { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 60}},
+     { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 40}},
+     { id: "contact", name: "Contact.exe", icon :"/img/contact-1.ico", defaultPosition: {x: 10, y: 470}},
   ]
 
   useEffect(() => {
@@ -42,6 +43,7 @@ function Desktop({ onIconClick }) {
              className={`desktop-icon 
               ${icon.id === "notepad" ? "notepad-icon" : ""}
               ${icon.id === "RexicoCity" ? "rexico-icon" : ""}
+              ${icon.id === "contact" ? "contact-icon" : ""}
               `}
              onClick={() => onIconClick(icon.id)}
            >

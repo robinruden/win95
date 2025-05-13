@@ -6,14 +6,16 @@ import Window from "./components/Window"
 import Taskbar from "./components/Taskbar"
 import Desktop from "./components/Desktop"
 import Notepad from "./components/Notepad"
-import MyComputer from "./components/MyComputer"
+/* import MyComputer from "./components/MyComputer" */
 import SpinningCD from "./components/SpinningCD"
 import RexicoCity from "./components/RexicoCity"
+import Contact from "./components/Contact"
 
 const SIZE_MAP = {
   notepad: { width: 200, height: 200},
   SpinningCD: {width: 150, height: 150},
-  RexicoCity: {width: 250, height: 200}
+  RexicoCity: {width: 250, height: 200},
+  contact: {width: 500, height: 500}
 }
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
         return "Spinning CD"
       case "RexicoCity":
         return "Rexico City"
+      case "contact":
+        return "Contact"
       default:
         return "Window"
     }
@@ -114,6 +118,7 @@ function App() {
           {window.type === "mycomputer" && <MyComputer />}
           {window.type === "SpinningCD" && <SpinningCD />}
           {window.type === "RexicoCity" && <RexicoCity />}
+          {window.type === "contact" && <Contact />}
         </Window>
       ))}
 
