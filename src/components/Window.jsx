@@ -7,6 +7,7 @@ const positionMap = {
   notepad:    { x: 100, y: 120 },
   contact:    { x: 250, y: 140 },
   RexicoCity: { x: 180, y: 200 },
+  amiga:      { x: 200, y: 70 },
 };
 
 
@@ -25,7 +26,7 @@ function Window({
 }) {
 
     const fallbackCascade = {
-    x: 35 + (parseInt(id, 10) % 1) * 10,  // or use some other index
+    x: 35 + (parseInt(id, 10) % 3) * 10,  // or use some other index
     y: 160 + (parseInt(id, 10) % 10) * 10,
   };
 

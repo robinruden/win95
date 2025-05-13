@@ -10,12 +10,14 @@ import Notepad from "./components/Notepad"
 import SpinningCD from "./components/SpinningCD"
 import RexicoCity from "./components/RexicoCity"
 import Contact from "./components/Contact"
+import Amiga from "./components/Amiga"
 
 const SIZE_MAP = {
   notepad: { width: 200, height: 200},
   SpinningCD: {width: 150, height: 150},
   RexicoCity: {width: 250, height: 200},
-  contact: {width: 300, height: 300}
+  contact: {width: 300, height: 300},
+  amiga: {width: 250, height: 200}
 }
 
 function App() {
@@ -52,6 +54,8 @@ function App() {
         return "Rexico City"
       case "contact":
         return "Contact"
+      case "amiga":
+        return "Amiga"
       default:
         return "Window"
     }
@@ -119,6 +123,7 @@ function App() {
           {window.type === "SpinningCD" && <SpinningCD />}
           {window.type === "RexicoCity" && <RexicoCity />}
           {window.type === "contact" && <Contact />}
+          {window.type === "amiga" && <Amiga />}
         </Window>
       ))}
 

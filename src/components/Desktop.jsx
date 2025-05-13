@@ -18,6 +18,7 @@ function Desktop({ onIconClick }) {
    /*  { id: "SpinningCD", name: "Spinning CD.exe", icon :"/img/cd_drive.ico", defaultPosition: {x: 10, y: 60}}, */
      { id: "RexicoCity", name: "Rexico City.exe", icon :"/img/rexico-logga.ico", defaultPosition: {x: 10, y: 40}},
      { id: "contact", name: "Contact.exe", icon :"/img/contact-1.ico", defaultPosition: {x: 10, y: 400}},
+     { id: "amiga", name: "Amiga.exe", icon :"/img/amiga.ico", defaultPosition: {x: 10, y: 200}},
   ]
 
   useEffect(() => {
@@ -46,6 +47,7 @@ function Desktop({ onIconClick }) {
               ${icon.id === "notepad" ? "notepad-icon" : ""}
               ${icon.id === "RexicoCity" ? "rexico-icon" : ""}
               ${icon.id === "contact" ? "contact-icon" : ""}
+              ${icon.id === "amiga" ? "amiga-icon" : ""}
               `}
             onClick={() => onIconClick(icon.id)}
             onTouchEnd={() => onIconClick(icon.id)}
