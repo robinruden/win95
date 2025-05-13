@@ -48,10 +48,13 @@ function Desktop({ onIconClick }) {
              onClick={() => onIconClick(icon.id)}
            >
              <img
-               src={icon.icon || "/placeholder.svg"}
-               alt={icon.name}
-               className="icon-image"
+              src={icon.icon}
+              alt={icon.name}
+              className="icon-image"
+              onClick={() => onIconClick(icon.id)}
+              style={{ cursor: 'pointer' }}
              />
+            
              <div className="icon-text">{icon.name}</div>
            </div>
          </Draggable>

@@ -16,7 +16,7 @@ function MyComputer() {
       <div className="folder-view">
         {drives.map((drive) => (
           <div key={drive.id} className="folder-item">
-            <img src={drive.icon || "img/computer_explorer.ico"} alt={drive.name} className="folder-icon" />
+            <img src={drive.icon || "/img/computer_explorer.ico"} alt={drive.name} className="folder-icon" />
             <div className="folder-details">
               <div className="folder-name">{drive.name}</div>
               <div className="folder-type">{drive.type}</div>

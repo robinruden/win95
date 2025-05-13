@@ -24,6 +24,8 @@
   width: 4rem;
   height: 5rem;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
 
   /* border: solid 1px pink; */
   
@@ -51,6 +53,8 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
