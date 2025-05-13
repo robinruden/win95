@@ -15,7 +15,7 @@ const SIZE_MAP = {
   notepad: { width: 200, height: 200},
   SpinningCD: {width: 150, height: 150},
   RexicoCity: {width: 250, height: 200},
-  contact: {width: 500, height: 500}
+  contact: {width: 300, height: 300}
 }
 
 function App() {

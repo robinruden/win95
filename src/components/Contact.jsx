@@ -28,7 +28,7 @@ export default function Contact() {
         <div className="contact">
             <div className="contact-header">
                 <div className="contact-photo"> 
-                    <img src="./img/robin.png" alt="" />
+                    <img src="/img/robin.png" alt="" />
                 </div>   
                
                 <div className="contact-title-bar">
@@ -39,14 +39,19 @@ export default function Contact() {
             </div>
 
             <div className="contact-content">  
-               <p>✉️ robinruden@gmail.com</p> 
-                <p>📞 0730502508</p>
-               <p> 🌐 github.com/robinruden</p>
-                <p>🔗 www.linkedin.com/in/robin-rudén-60959762</p>
+               <p>✉️ <a href="mailto:robinruden@gmail.com">robinruden@gmail.com</a></p> 
+                <p>📞 <a href="tel:0730502608">0730502608</a></p>
+               <p>🌐 <a href="https://github.com/robinruden">github.com/robinruden</a></p>
+                <p>🔗 <a href="https://www.linkedin.com/in/robin-rudén-60959762"  target="_blank" rel="noopener noreferrer">www.linkedin.com/in/robin-rudén-60959762</a></p>
             </div>
 
-              <div className="mt-6 pt-4 border-t border-[#808080]">
-                <button className="px-4 py-1 bevel">Send Message</button>
+              <div className="contact-send-message">
+                <button 
+                className="contact-send-btn"
+                onClick={() => window.location.href = "mailto:robinruden@gmail.com"}  
+                >
+                Send Message
+                </button>
               </div>
     
         

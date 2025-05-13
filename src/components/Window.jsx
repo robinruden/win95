@@ -3,21 +3,43 @@
 import { useState, useRef, useEffect } from "react"
 import "../styles/Window.css"
 
+const positionMap = {
+  notepad:    { x: 100, y: 120 },
+  contact:    { x: 250, y: 140 },
+  RexicoCity: { x: 180, y: 200 },
+};
+
+
 function Window({ 
-  id, title, children, 
-  active, zIndex, 
+  id, 
+  title, 
+  children, 
+  defaultPosition,
+  active, 
+  zIndex, 
   width = 200,
   height = 200,
-  onClose, onMinimize, onActivate 
+  onClose, 
+  onMinimize, 
+  onActivate 
 }) {
-  const [position, setPosition] = useState({ 
-    x: 100 + (id % 5) * 1, 
-    y: 160 + (id % 3) * 1 
-  })
+
+    const fallbackCascade = {
+    x: 35 + (parseInt(id, 10) % 1) * 10,  // or use some other index
+    y: 160 + (parseInt(id, 10) % 10) * 10,
+  };
+
+
+  const initialPos = 
+  defaultPosition ??
+  positionMap[id] ?? 
+  fallbackCascade
+  
   const [dragging, setDragging] = useState(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   const [size, setSize] = useState({ width, height})
   const windowRef = useRef(null)
+  const [position, setPosition] = useState(initialPos)
 
   const handleMouseDown = (e) => {
     if (e.target.classList.contains("title-bar")) {
